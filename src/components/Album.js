@@ -10,8 +10,37 @@ class Album extends Component {
     });
 
     this.state = {
-      album: album
+      album: album,
+      currentSong: album.songs[0],
+      isPlaying = false;
     };
+
+   this.audioElement = document.createElement('audio');
+   this.audioElement.src = album.songs[0].audioSrc;
+  }
+
+  play() {
+    this.audioElement.play();
+    this.setState( { isPlaying = true } )
+  }
+
+  pause() {
+    this.audioElement.pause();
+    this.setStateS( { isPlaying = false });
+  }
+
+  setSong(song) {
+    this.audioElement.src = song.audioSrc;
+    this.setState( { currentSong = song });
+  }
+
+  handleSongClick(song) {
+    const isSameSong = this.state.currentSong === song;
+    if (this.state.isPlaying && this.state.currentSong) {
+      this.pause()
+    } else {
+      this.play()
+    }
   }
 
   render() {
