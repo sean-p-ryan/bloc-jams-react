@@ -67,11 +67,8 @@ class Album extends Component {
           </colgroup>
           <tbody>
           {this.state.album.songs.map((song, index) => (
-<<<<<<< HEAD
             <tr className="song" key="index">
-=======
             <tr className="song" key="index" onClick={() => this.handleSongClick(song)} >
->>>>>>> checkpoint-7-audio
               <td>{index + 1}</td>
               <td>{song.title}</td>
               <td>{song.duration}</td>
