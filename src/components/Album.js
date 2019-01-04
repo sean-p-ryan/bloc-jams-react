@@ -6,14 +6,13 @@ class Album extends Component {
     super(props);
 
     const album = albumData.find(album => {
-      return album.slug == this.props.match.params.slug;
+      return album.slug === this.props.match.params.slug;
     });
 
     this.state = {
       album: album,
       currentSong: album.songs[0],
       isPlaying: false,
-      iconClass: false,
       hover: false
     };
 
@@ -49,17 +48,20 @@ class Album extends Component {
   }
 
   handleMouseEnter(song) {
-    const isSameSong = this.state.currentSong === song;
-    if (this.state.isPlaying && !isSameSong){
-      this.setState({ iconClass: "icon ion-md-pause"})
-    } else {
-      this.setState({ iconClass: "icon ion-md-play" })
-    }
+    this.setState({ hover: song });
   }
 
   handleMouseOut(song){
-    this.setState({ iconClass: false })
+    this.setState({ hover: false })
   }
+
+ createSpan(song, index) {
+    if (this.state.isPlaying === true && this.state.hover === song && this.state.currentSong === song) {
+      return <span className="icon ion-md-pause"></span>
+       } else if (this.state.hover === song) {
+         return <span className="icon ion-md-play"></span>
+       } else return <span>{index + 1}</span>
+    }
 
   render() {
     return (
@@ -86,14 +88,12 @@ class Album extends Component {
             {this.state.album.songs.map((song, index) => (
               <tr
                 className="song"
-                key="index"
+                key={song}
                 onClick={() => this.handleSongClick(song)}
                 onMouseEnter={() => this.handleMouseEnter(song)}
                 onMouseLeave={() => this.handleMouseOut(song)}
               >
-                <td><span
-                  className={this.state.iconClass}
-                >{index + 1}</span></td>
+                <td>{this.createSpan(song, index)}</td>
                 <td>{song.title}</td>
                 <td>{song.duration}</td>
               </tr>
