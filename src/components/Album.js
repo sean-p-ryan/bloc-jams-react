@@ -6,7 +6,7 @@ class Album extends Component {
     super(props);
 
     const album = albumData.find(album => {
-      return album.slug == this.props.match.params.slug;
+      return album.slug === this.props.match.params.slug;
     });
 
     this.state = {
@@ -47,6 +47,7 @@ class Album extends Component {
     }
   }
 
+<<<<<<< HEAD
   hoverOn() {
     this.setState({ hover: true });
   }
@@ -55,6 +56,24 @@ class Album extends Component {
     this.setState({ hover: false });
   }
 
+=======
+  handleMouseEnter(song) {
+    this.setState({ hover: song });
+  }
+
+  handleMouseOut(song){
+    this.setState({ hover: false })
+  }
+
+ createSpan(song, index) {
+    if (this.state.isPlaying === true && this.state.hover === song && this.state.currentSong === song) {
+      return <span className="icon ion-md-pause"></span>
+       } else if (this.state.hover === song) {
+         return <span className="icon ion-md-play"></span>
+       } else return <span>{index + 1}</span>
+    }
+
+>>>>>>> assignment-7-audio
   render() {
     return (
       <section className="album">
@@ -80,6 +99,7 @@ class Album extends Component {
             {this.state.album.songs.map((song, index) => (
               <tr
                 className="song"
+<<<<<<< HEAD
                 key="index"
                 onClick={() => this.handleSongClick(song)}
               >
@@ -90,6 +110,14 @@ class Album extends Component {
                   <span className={ this.state.hover ? "icon ion-md-play" : " "} />
                   {index + 1}
                 </td>
+=======
+                key={song}
+                onClick={() => this.handleSongClick(song)}
+                onMouseEnter={() => this.handleMouseEnter(song)}
+                onMouseLeave={() => this.handleMouseOut(song)}
+              >
+                <td>{this.createSpan(song, index)}</td>
+>>>>>>> assignment-7-audio
                 <td>{song.title}</td>
                 <td>{song.duration}</td>
               </tr>
@@ -100,5 +128,4 @@ class Album extends Component {
     );
   }
 }
-
 export default Album;
