@@ -202,7 +202,7 @@ class Album extends Component {
               >
                 <td>{this.createSpan(song, index)}</td>
                 <td>{song.title}</td>
-                <td>{this.state.duration}</td>
+                <td>{this.formatTime(song.duration)}</td>
               </tr>
             ))}
           </tbody>
