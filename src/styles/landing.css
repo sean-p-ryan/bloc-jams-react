@@ -1,0 +1,6 @@
+body {
+  background-image: url("../background_images/homepage-background.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}

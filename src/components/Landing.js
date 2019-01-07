@@ -1,4 +1,5 @@
 import React from 'react';
+import album from "../styles/landing.css";
 
 const Landing = () => (
   <section className="landing">
