@@ -1,6 +1,27 @@
-body {
-  background-image: url("../background_images/homepage-background.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
+.selling-points {
+  float: left;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 80px;
+  font-size: 20px;
+  overflow-y: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+p {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* .point-one {
+  margin-bottom: 50px;
+}
+
+.point-two {
+  margin-bottom: 50px;
+  margin-left: 350px;
+} */

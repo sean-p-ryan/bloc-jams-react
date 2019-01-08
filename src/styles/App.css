@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-image: url("../background_images/homepage-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: local; */
+  background-position: right;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* overflow-y: hidden; */
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  float: left;
+  color: #1839e0;
+  text-transform: uppercase;
+  font-size: 47px;
+  display: inline-block;
+  margin-left: 34%;
+  width: 284px;
+}
+
+nav {
+  margin-top: 48px;
+  display: inline;
+  margin-left: 26px;
+  width: 100px;
+  height: 22px;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 9px;
+  background-color: #1839e0;
+}
+
+.icon {
+  color: white;
+  margin-left: 10px;
+}
+
+.Library {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
