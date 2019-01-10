@@ -1,0 +1,53 @@
+.album {
+  background: #F1A533;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#album-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#album-title {
+  font-size: 25px;
+  width: 320px;
+}
+
+.album-main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  width: 100%;
+}
+
+.album-main img {
+  height: 300px;
+  margin-left: 140px;
+}
+
+table {
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+tr {
+  color: white;
+}
+
+thead tr {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+td {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-left: 15px;
+}
+
+col {
+  width: 70px;
+}

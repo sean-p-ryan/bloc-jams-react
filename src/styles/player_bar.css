@@ -1,0 +1,21 @@
+.player-controls {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+
+.icon {
+  color: black;
+  margin: 0;
+}
+
+#player {
+  display: flex;
+}
+
+button {
+  margin-right: 10px;
+}

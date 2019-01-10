@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import albumData from "./../data/albums";
 import PlayerBar from "./PlayerBar";
-
+import album from "./../styles/album.css";
 
 class Album extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Album extends Component {
       timeupdate: e => {
         const currentTime = this.audioElement.currentTime;
         this.setState({ currentTime: currentTime });
-        this.formatTime(currentTime)
+        this.formatTime(currentTime);
       },
       durationchange: e => {
         this.setState({ duration: this.audioElement.duration });
@@ -128,7 +128,7 @@ class Album extends Component {
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
     var displayTime = this.formatTime(newTime);
-    this.setState({ displayTime: this.displayTime});
+    this.setState({ displayTime: this.displayTime });
   }
 
   handleVolumeChange(e) {
@@ -146,10 +146,7 @@ class Album extends Component {
   }
 
   createSpan(song, index) {
-    if (
-      this.state.isPlaying === true &&
-      this.state.currentSong === song
-    ) {
+    if (this.state.isPlaying === true && this.state.currentSong === song) {
       return <span className="icon ion-md-pause" />;
     } else if (this.state.hover === song) {
       return <span className="icon ion-md-play" />;
@@ -157,11 +154,11 @@ class Album extends Component {
   }
 
   formatTime(time) {
-    if (time === NaN){
-      this.setState({ displayTime: "-:--" })
+    if (time === NaN) {
+      this.setState({ displayTime: "-:--" });
     }
     const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time) - (60 * minutes);
+    const seconds = Math.floor(time) - 60 * minutes;
     if (seconds < 10) {
       var newTime = minutes + ":" + 0 + seconds;
     } else {
@@ -175,39 +172,50 @@ class Album extends Component {
     return (
       <section className="album">
         <section id="album-info">
+          <h1 id="album-title">
+            {this.state.album.title}
+            <br />
+            by {this.state.album.artist}
+          </h1>
+        </section>
+
+        <div className="album-main">
           <img
             id="album-cover-art"
             src={this.state.album.albumCover}
             alt={this.state.album.title}
           />
-          <div className="album-details">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
-          </div>
-        </section>
-        <table id="song-list">
-          <colgroup>
-            <col id="song-number-column" />
-            <col id="song-title-column" />
-            <col id="song-duration-column" />
-          </colgroup>
-          <tbody>
-            {this.state.album.songs.map((song, index) => (
-              <tr
-                className="song"
-                key={song}
-                onClick={() => this.handleSongClick(song)}
-                onMouseEnter={() => this.handleMouseEnter(song)}
-                onMouseLeave={() => this.handleMouseOut(song)}
-              >
-                <td>{this.createSpan(song, index)}</td>
-                <td>{song.title}</td>
-                <td>{this.formatTime(song.duration)}</td>
+
+          <table id="song-list">
+            <thead>
+              <tr>
+                <td>#</td>
+                <td>TITLE</td>
+                <td>LENGTH</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <colgroup>
+              <col id="song-number-column" />
+              <col id="song-title-column" />
+              <col id="song-duration-column" />
+            </colgroup>
+            <tbody>
+              {this.state.album.songs.map((song, index) => (
+                <tr
+                  className="song"
+                  key={song}
+                  onClick={() => this.handleSongClick(song)}
+                  onMouseEnter={() => this.handleMouseEnter(song)}
+                  onMouseLeave={() => this.handleMouseOut(song)}
+                >
+                  <td>{this.createSpan(song, index)}</td>
+                  <td>{song.title}</td>
+                  <td>{this.formatTime(song.duration)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
@@ -221,7 +229,7 @@ class Album extends Component {
           handleNextClick={() => this.handleNextClick()}
           handleTimeChange={e => this.handleTimeChange(e)}
           handleVolumeChange={e => this.handleVolumeChange(e)}
-          formatTime={(t) => this.formatTime(t)}
+          formatTime={t => this.formatTime(t)}
         />
       </section>
     );
