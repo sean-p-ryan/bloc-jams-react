@@ -4,12 +4,13 @@ import playerBar from "../styles/player_bar.css";
 class PlayerBar extends Component {
   render() {
     return (
+      <React.Fragment>
       <section className="player-controls">
         <section id="player">
           <button id="play-pause" onClick={this.props.handleSongClick}>
             <span
               className={
-                this.props.isPlaying ? "icon ion-md-pause" : "icon ion-md-play"
+                this.props.isPlaying ? "fas fa-pause" : "fas fa-play"
               }
             />
           </button>
@@ -26,15 +27,14 @@ class PlayerBar extends Component {
             />
           </section>
           <section className="time-displays">
-            <div className="current-time">
+            <div className="current-total-time">
               {this.props.formatTime(this.props.currentTime)}/
               {this.props.formatTime(this.props.duration)}
             </div>
           </section>
 
           <section id="volume-control">
-            <i className="icon ion-md-volume" />
-
+            <i class="fas fa-volume-up"></i>
             <input
               type="range"
               className="volume-bar"
@@ -48,20 +48,20 @@ class PlayerBar extends Component {
             />
           </section>
         </section>
-
-        <section className="seek-buttons">
-          <button id="previous">
-            <span
-              className="icon ion-md-skip-backward"
-              onClick={this.props.handlePrevClick}
-            />
-          </button>
-
-          <button id="next" onClick={this.props.handleNextClick}>
-            <span className="icon ion-md-skip-forward" />
-          </button>
-        </section>
       </section>
+
+      <section className="seek-buttons">
+        <button id="previous">
+          <span
+            className="icon ion-md-skip-backward"
+            onClick={this.props.handlePrevClick}
+          />
+        </button>
+        <button id="next" onClick={this.props.handleNextClick}>
+          <span className="icon ion-md-skip-forward" />
+        </button>
+      </section>
+      </React.Fragment>
     );
   }
 }
