@@ -5,7 +5,7 @@ import landing from "../styles/landing.css";
 const Landing = () => (
   <body className="background-image">
     <header>
-      <h1>Bot Grooves</h1>
+      <h1>Algo Rhythm</h1>
       <nav>
         <Link className="Library" to='/library'>Library</Link>
         <i className="icon ion-md-play" id="nav-arrow"></i>
@@ -16,7 +16,7 @@ const Landing = () => (
        <p>Robot-powered jam selection <br />
        and discovery.</p>
 
-       <p>Bump your jams wherever you be, <br />however you do.</p>
+       <p>Rock your jams wherever you be, <br />however you do.</p>
 
        <p>You are a butterfly.</p>
       </div>

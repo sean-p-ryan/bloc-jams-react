@@ -25,11 +25,9 @@
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 700;
-}
-
-#album-image-library {
-  /* height: 50%;
-  width: 50%; */
+  transition: color 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
 }
 
 #album-info-links {
@@ -53,32 +51,6 @@ h1 {
   /* width: 100%; */
 }
 
-#track-number-library {
-  transition: color 0.3s linear;
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-}
-
-#artist-name-library {
-  transition: color 0.3s linear;
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-}
-
-#album-title-library {
-  transition: color 0.3s linear;
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-}
-
-#track-number-library:hover {
-  color: #F44336;
-}
-
-#artist-name-library:hover {
-  color: #F44336;
-}
-
-#album-title-library:hover {
+#album-info-library:hover {
   color: #F44336;
 }
