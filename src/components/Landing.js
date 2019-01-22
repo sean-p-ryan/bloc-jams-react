@@ -5,7 +5,7 @@ import landing from "../styles/landing.css";
 const Landing = () => (
   <body className="background-image">
     <header>
-      <h1>Bloc Jams</h1>
+      <h1>Bot Grooves</h1>
       <nav>
         <Link className="Library" to='/library'>Library</Link>
         <i className="icon ion-md-play" id="nav-arrow"></i>
