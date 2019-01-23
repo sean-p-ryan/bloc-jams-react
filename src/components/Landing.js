@@ -12,13 +12,20 @@ const Landing = () => (
       </nav>
     </header>
     <section className="selling-points">
-      <div className="selling-points">
-       <p>Robot-powered jam selection <br />
-       and discovery.</p>
-
-       <p>Rock your jams wherever you be, <br />however you do.</p>
-
-       <p>You are a butterfly.</p>
+      <div className="dexter">
+       <p className="selling-point-text">Robot-powered jam selection and discovery.</p>
+       <div className="dexter-image">
+       </div>
+      </div>
+      <div className="beethoven">
+       <p className="selling-point-text">Rock your jams wherever you be, however you do.</p>
+       <div className="beethoven-image">
+       </div>
+      </div>
+      <div className="willie">
+       <p className="selling-point-text">You are a butterfly.</p>
+       <div className="willie-image">
+       </div>
       </div>
     </section>
   </body>

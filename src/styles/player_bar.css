@@ -1,3 +1,11 @@
+.container {
+  background: #AFB1E3;
+  width: 50%;
+  margin: 0 auto;
+  height: 70px;
+  border-radius: 10px;
+}
+
 .player-controls {
   display: flex;
   width: 100%;
@@ -8,7 +16,7 @@
 
 
 .icon {
-  color: black;
+  color: white;
   margin: 0;
 }
 
@@ -21,11 +29,20 @@
 
 #player {
   display: flex;
+  margin-top: 3%;
 }
 
 button {
   margin-right: 10px;
   border-radius: 5px;
+}
+
+#forward {
+  color: black;
+}
+
+#backwards {
+  color: black;
 }
 
 .volume-bar {

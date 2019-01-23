@@ -5,6 +5,7 @@ class PlayerBar extends Component {
   render() {
     return (
       <React.Fragment>
+      <div className="container">
       <section className="player-controls">
         <section id="player">
           <button id="play-pause" onClick={this.props.handleSongClick}>
@@ -53,14 +54,16 @@ class PlayerBar extends Component {
       <section className="seek-buttons">
         <button id="previous">
           <span
+            id="backwards"
             className="icon ion-md-skip-backward"
             onClick={this.props.handlePrevClick}
           />
         </button>
         <button id="next" onClick={this.props.handleNextClick}>
-          <span className="icon ion-md-skip-forward" />
+          <span className="icon ion-md-skip-forward" id="forward"/>
         </button>
       </section>
+      </div>
       </React.Fragment>
     );
   }

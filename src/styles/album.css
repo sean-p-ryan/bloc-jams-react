@@ -1,9 +1,3 @@
-.album {
-  background: #F1A533;
-  height: 100vh;
-  overflow-x: hidden;
-}
-
 #album-info {
   display: flex;
   flex-direction: row;
@@ -15,11 +9,18 @@
   width: 320px;
 }
 
+#song-title-column {
+  width: 300px;
+  text-align: left;
+  justify-content: left;
+}
+
 .album-main {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
   width: 100%;
+  overflow-y: hidden;
 }
 
 .album-main img {
@@ -37,8 +38,9 @@ tr {
 }
 
 thead tr {
-  color: blue;
+  color: white;
   border-bottom: 1px solid blue;
+  padding-bottom: 100px;
 }
 
 td {
