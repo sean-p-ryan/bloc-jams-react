@@ -1,8 +1,8 @@
 .container {
   background: #AFB1E3;
-  width: 50%;
-  margin: 0 auto;
-  height: 70px;
+  width: 40%;
+  margin: 20px auto;
+  height: 100px;
   border-radius: 10px;
 }
 
@@ -29,7 +29,7 @@
 
 #player {
   display: flex;
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 button {

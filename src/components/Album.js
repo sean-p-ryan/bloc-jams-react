@@ -171,6 +171,8 @@ class Album extends Component {
   render() {
     return (
       <React.Fragment>
+      <div className="header">
+      </div>
       <section className="album">
         <section id="album-info">
           <h1 id="album-title">
