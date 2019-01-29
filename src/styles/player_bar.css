@@ -1,6 +1,6 @@
 .container {
   background: #AFB1E3;
-  width: 40%;
+  width: 500px;
   margin: 20px auto;
   height: 100px;
   border-radius: 10px;
@@ -46,7 +46,7 @@ button {
 }
 
 .volume-bar {
-  width: 50px;
+  width: 90px;
 }
 
 .seek-buttons {
@@ -58,4 +58,6 @@ button {
 
 .fa-volume-up {
   margin-right: 5px;
+  padding-bottom: 0px;
+  font-size: 25px;
 }

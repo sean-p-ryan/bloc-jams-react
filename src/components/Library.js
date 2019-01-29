@@ -12,8 +12,8 @@ class Library extends Component {
   render() {
     return (
       <body className="library-body">
-      <div className="header">
-      </div>
+      // <div className="header">
+      // </div>
         <header>
           <h1 id="library-header">Album Library</h1>
         </header>
